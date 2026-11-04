@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="index, follow">
+<title>MARGE · Confidentialité</title>
+<meta name="description" content="Politique de confidentialité de MARGE : quelles données, où elles vont, combien de temps, et comment les effacer.">
+<style>
+  :root {
+    --page: #FBF6EE;
+    --card: #FFFDFA;
+    --ink: #14233A;
+    --soft: #596475;
+    --green: #296A3B;
+    --green-soft: #DAF4D4;
+    --fox: #F67F2F;
+    --line: #EAE3D8;
+    --todo-bg: #FDE1A7;
+    --todo-ink: #7E4F04;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --page: #141A22;
+      --card: #1C2430;
+      --ink: #F3EEE6;
+      --soft: #B3BCC8;
+      --green: #8FD19E;
+      --green-soft: #1F3A28;
+      --fox: #F7924F;
+      --line: #2C3644;
+      --todo-bg: #4A3510;
+      --todo-ink: #FDE1A7;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 28px 16px 56px; }
+  header { margin-bottom: 24px; }
+  .brand { font-weight: 800; letter-spacing: .14em; color: var(--fox); font-size: 15px; margin: 0 0 6px; }
+  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 8px; font-weight: 800; }
+  .updated { color: var(--soft); margin: 0; font-size: 15px; }
+  h2 { font-size: 21px; line-height: 1.3; margin: 0 0 12px; font-weight: 800; }
+  h3 { font-size: 17px; margin: 20px 0 6px; font-weight: 800; }
+  p, li { margin: 0 0 10px; }
+  ul { padding-left: 20px; margin: 0 0 10px; }
+  a { color: var(--green); text-underline-offset: 2px; }
+  strong { font-weight: 700; }
+  section {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 20px 18px;
+    margin: 0 0 14px;
+  }
+  .summary { background: var(--green-soft); }
+  .summary h2 { color: var(--green); }
+  .soft { color: var(--soft); }
+  .todo {
+    display: inline;
+    background: var(--todo-bg);
+    color: var(--todo-ink);
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 6px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 15.5px; margin: 4px 0 8px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 8px; border-top: 1px solid var(--line); }
+  th { font-weight: 800; color: var(--soft); font-size: 14px; border-top: 0; }
+  td:first-child { font-weight: 700; }
+  /* Phones: each row becomes a small block, so nothing scrolls sideways. */
+  @media (max-width: 600px) {
+    table, tbody, tr, td { display: block; width: 100%; }
+    thead { display: none; }
+    tr { border-top: 1px solid var(--line); padding: 10px 0; }
+    td { border: 0; padding: 2px 0; }
+    td[data-label]::before {
+      content: attr(data-label) " : ";
+      color: var(--soft);
+      font-weight: 700;
+    }
+    td:first-child::before { content: none; }
+    td:first-child { font-size: 16.5px; margin-bottom: 2px; }
+  }
+  footer { color: var(--soft); font-size: 14px; text-align: center; margin-top: 24px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="brand">MARGE</p>
+    <h1>Politique de confidentialité</h1>
+    <p class="updated">Dernière mise à jour : 4 novembre 2026</p>
+  </header>
+
+  <section>
+    <p>MARGE te dit quand partir pour arriver à l'heure en transports en commun en Île-de-France. Pour cela, elle a besoin de savoir d'où tu pars, où tu vas et à quelle heure tu veux arriver. Ce sont des informations sensibles : elles disent où tu habites et où tu travailles. Cette page explique ce que MARGE en fait, où elles vont et combien de temps elles restent.</p>
+  </section>
+
+  <section class="summary">
+    <h2>En bref</h2>
+    <ul>
+      <li>Pas de compte, pas d'identifiant, pas de publicité, pas de mesure d'audience, pas de revente.</li>
+      <li>Tes lieux, ton heure et tes jours sont gardés sur ton iPhone.</li>
+      <li>Pour calculer ton trajet, MARGE envoie à son serveur la position de ton domicile et de ton travail <strong>arrondie à environ 100 m</strong> et ton heure d'arrivée. Le serveur interroge Île-de-France Mobilités, ne garde la réponse que quelques minutes au plus et n'écrit ces positions dans aucun journal.</li>
+      <li>Tu effaces tout depuis l'app : Paramètres &gt; Confidentialité &gt; Effacer mes données.</li>
+    </ul>
+  </section>
+
+  <section id="responsable">
+    <h2>1. Qui est responsable</h2>
+    <p>Le responsable du traitement est l'éditeur de MARGE :</p>
+    <ul>
+      <li>Ibrahima Diouf, éditeur indépendant (particulier)</li>
+      <li>Contact pour toute question sur tes données : <a href="mailto:dioufibrahima02@gmail.com">dioufibrahima02@gmail.com</a></li>
+    </ul>
+    <p class="soft">MARGE est une app indépendante. Elle n'est ni éditée ni validée par Île-de-France Mobilités, la RATP ou la SNCF.</p>
+  </section>
+
+  <section id="donnees">
+    <h2>2. Les données et ce qu'on en fait</h2>
+    <table>
+      <thead><tr><th>Donnée</th><th>Pourquoi</th><th>Où elle va</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Adresses de ton domicile et de ton travail (texte de l'adresse et position exacte)</td>
+          <td data-label="Pourquoi">Savoir d'où tu pars et où tu vas</td>
+          <td data-label="Où elle va">Gardées sur ton iPhone. Seule une position <strong>arrondie à environ 100 m</strong> part vers le serveur MARGE (section 3).</td>
+        </tr>
+        <tr>
+          <td>Ce que tu tapes pour chercher une adresse</td>
+          <td data-label="Pourquoi">Te proposer des adresses</td>
+          <td data-label="Où elle va">Envoyé à Apple (Plans), pas à MARGE.</td>
+        </tr>
+        <tr>
+          <td>Heure d'arrivée voulue</td>
+          <td data-label="Pourquoi">Chercher les trajets qui t'amènent à l'heure</td>
+          <td data-label="Où elle va">Gardée sur ton iPhone, et envoyée au serveur avec chaque recherche (le serveur l'arrondit à la minute).</td>
+        </tr>
+        <tr>
+          <td>Jours de trajet</td>
+          <td data-label="Pourquoi">Savoir quels jours te prévenir</td>
+          <td data-label="Où elle va">Restent sur ton iPhone. Le serveur ne voit que la date de chaque recherche.</td>
+        </tr>
+        <tr>
+          <td>Marge d'arrivée</td>
+          <td data-label="Pourquoi">Choisir le départ qui garde l'avance que tu veux</td>
+          <td data-label="Où elle va">Reste sur ton iPhone.</td>
+        </tr>
+        <tr>
+          <td>Lignes de ton trajet habituel, lignes à éviter pour un plan B</td>
+          <td data-label="Pourquoi">Vérifier l'info trafic de tes lignes, proposer un autre trajet quand elles sont touchées</td>
+          <td data-label="Où elle va">Gardées sur ton iPhone et envoyées au serveur avec la recherche (identifiants de lignes seulement).</td>
+        </tr>
+        <tr>
+          <td>Arrêt où tu montes, ligne, heure et code de ton train</td>
+          <td data-label="Pourquoi">Afficher les prochains passages en direct</td>
+          <td data-label="Où elle va">Envoyés au serveur quand l'écran en a besoin.</td>
+        </tr>
+        <tr>
+          <td>Historique local : compteur de temps gagné, alertes déjà envoyées, alertes prévues</td>
+          <td data-label="Pourquoi">Afficher le temps gagné du mois, ne pas te prévenir deux fois de la même chose</td>
+          <td data-label="Où elle va">Restent sur ton iPhone.</td>
+        </tr>
+        <tr>
+          <td>Notifications</td>
+          <td data-label="Pourquoi">Te dire quand partir, et si ton trajet change</td>
+          <td data-label="Où elle va">Programmées et affichées par ton iPhone. Aucune notification ne vient d'un serveur.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong>Ta position GPS.</strong> MARGE ne lit pas la position de ton iPhone : elle ne demande pas l'accès à la localisation. Les seules positions utilisées sont celles des adresses que tu as choisies. Si une version future propose de lire ta position (par exemple pour reconnaître tes habitudes), elle te demandera d'abord ton autorisation et cette page sera mise à jour avant.</p>
+    <p><strong>Ton calendrier.</strong> MARGE n'y accède pas.</p>
+    <p><strong>Mode démo.</strong> En mode démo, les horaires sont fictifs et rien n'est envoyé au serveur.</p>
+  </section>
+
+  <section id="circuit">
+    <h2>3. Ce qui reste sur ton iPhone, ce qui passe par le serveur, ce qui va chez Île-de-France Mobilités</h2>
+
+    <h3>Sur ton iPhone</h3>
+    <p>Tout ce que tu as réglé (domicile, travail, heure, jours, marge, lignes habituelles), le compteur de temps gagné et la liste des alertes. Ces données sont dans l'espace de l'app sur ton téléphone ; l'éditeur n'y a pas accès. Elles suivent la sauvegarde de ton iPhone (iCloud ou ordinateur) si elle est activée.</p>
+    <p>Les notifications s'affichent sur ton écran verrouillé selon tes réglages iOS. Elles peuvent nommer ta destination (« Travail ») et tes lignes.</p>
+
+    <h3>Sur le serveur MARGE</h3>
+    <p>À chaque recherche de trajet, ton iPhone envoie au serveur MARGE, par une connexion chiffrée :</p>
+    <ul>
+      <li>la position de ton domicile et de ton travail, <strong>arrondie par ton iPhone à 3 décimales</strong> (environ 100 m) avant tout envoi ;</li>
+      <li>ton heure d'arrivée (ou, quand tous les trajets sont partis, l'heure de maintenant) ;</li>
+      <li>les identifiants des lignes de ton trajet habituel, et ceux des lignes à éviter pour un plan B ;</li>
+      <li>pour les prochains passages : l'arrêt où tu montes, la ligne, l'heure et le code de ton train.</li>
+    </ul>
+    <p>Ce qui n'est <strong>pas</strong> envoyé : ton nom, ton adresse en texte, un identifiant de compte ou d'appareil, ta marge, tes jours.</p>
+    <p>Ce que fait le serveur :</p>
+    <ul>
+      <li>Il arrondit l'heure à la minute, puis demande les trajets à Île-de-France Mobilités.</li>
+      <li>Il garde la réponse peu de temps, pour la partager entre demandes identiques : <strong>45 secondes</strong> pour une recherche normale ou des prochains passages, <strong>10 minutes</strong> pour un plan B. Cette réponse contient l'itinéraire, donc des noms d'arrêts et de rues proches de ton domicile et de ton travail. Elle est rangée sous une clé hachée, en mémoire ou dans un dossier effacé dès qu'elle expire et à l'arrêt du serveur.</li>
+      <li>Il ne journalise ni les positions ni ton adresse IP. Ton adresse IP est vue par le serveur le temps de la connexion, comme pour tout site web, puis n'est pas conservée par MARGE. Le serveur est loué chez Hetzner Online GmbH, en Allemagne ; son serveur web est réglé pour n'écrire aucun journal d'accès contenant l'adresse IP.</li>
+    </ul>
+    <p>Le serveur télécharge aussi des données publiques (ponctualité de la SNCF, sorties des gares, affluence habituelle, calendrier scolaire de l'Éducation nationale). Il ne leur envoie rien sur toi.</p>
+
+    <h3>Chez Île-de-France Mobilités (plateforme PRIM)</h3>
+    <p>Le serveur MARGE, et non ton iPhone, demande à Île-de-France Mobilités, via sa plateforme PRIM :</p>
+    <ul>
+      <li>les trajets entre les deux positions arrondies, pour l'heure arrondie à la minute, en laissant de côté les lignes à éviter ;</li>
+      <li>les prochains passages à ton arrêt ;</li>
+      <li>l'info trafic de tout le réseau, en un seul appel commun à tous les utilisateurs.</li>
+    </ul>
+    <p>Île-de-France Mobilités ne reçoit ni ton adresse IP, ni un identifiant, ni ton nom : seulement ces positions arrondies, cette heure et ces arrêts, venant du serveur MARGE. Elle traite ces demandes sous sa propre responsabilité (<a href="https://prim.iledefrance-mobilites.fr/fr/conditions-utilisation">conditions d'utilisation de PRIM</a>).</p>
+
+    <h3>Chez Apple</h3>
+    <p>La recherche d'adresse (ce que tu tapes) et la carte du trajet (la zone affichée) passent par Apple Plans, sous la <a href="https://www.apple.com/fr/legal/privacy/">politique de confidentialité d'Apple</a>. Apple gère aussi l'affichage des notifications et la sauvegarde de ton iPhone.</p>
+  </section>
+
+  <section id="base-legale">
+    <h2>4. Sur quelle base</h2>
+    <ul>
+      <li><strong>Calculer ton trajet et te prévenir</strong> (envoi des positions arrondies, de l'heure et des lignes au serveur, puis à Île-de-France Mobilités) : c'est le service que tu demandes en utilisant MARGE (article 6.1.b du RGPD).</li>
+      <li><strong>Garder tes réglages sur ton iPhone</strong> : c'est strictement nécessaire au service que tu demandes, donc sans consentement à part (article 82 de la loi Informatique et Libertés).</li>
+      <li><strong>Notifications</strong> : seulement si tu les autorises dans la fenêtre d'iOS. Tu les coupes à tout moment dans les réglages de l'iPhone ; MARGE marche quand même.</li>
+      <li><strong>Adresse IP vue en transit</strong> : nécessaire pour que la connexion fonctionne et pour protéger le serveur (intérêt légitime, article 6.1.f du RGPD), sans conservation par MARGE.</li>
+    </ul>
+  </section>
+
+  <section id="durees">
+    <h2>5. Combien de temps</h2>
+    <table>
+      <thead><tr><th>Donnée</th><th>Durée</th></tr></thead>
+      <tbody>
+        <tr><td>Réglages sur ton iPhone (lieux, heure, jours, marge, lignes)</td><td data-label="Durée">Jusqu'à ce que tu les changes, les effaces ou supprimes l'app</td></tr>
+        <tr><td>Compteur de temps gagné</td><td data-label="Durée">Le mois en cours ; les mois passés sont effacés automatiquement</td></tr>
+        <tr><td>Alertes déjà envoyées (pour ne pas les répéter)</td><td data-label="Durée">2 jours</td></tr>
+        <tr><td>Alertes prévues</td><td data-label="Durée">Jusqu'à leur heure, ou jusqu'au prochain calcul</td></tr>
+        <tr><td>Réponse gardée par le serveur</td><td data-label="Durée">45 secondes (10 minutes pour un plan B)</td></tr>
+        <tr><td>Positions et adresse IP dans les journaux du serveur</td><td data-label="Durée">Aucune : elles n'y sont pas écrites</td></tr>
+        <tr><td>Info trafic et données publiques gardées par le serveur</td><td data-label="Durée">5 minutes et une journée ; elles ne contiennent rien sur toi</td></tr>
+      </tbody>
+    </table>
+    <p class="soft">Les copies dans la sauvegarde de ton iPhone suivent les règles de cette sauvegarde (Apple ou ton ordinateur).</p>
+  </section>
+
+  <section id="destinataires">
+    <h2>6. Qui reçoit tes données</h2>
+    <ul>
+      <li><strong>L'hébergeur du serveur MARGE</strong>, qui agit pour le compte de l'éditeur : Hetzner Online GmbH, serveur en Allemagne.</li>
+      <li><strong>Île-de-France Mobilités</strong> (plateforme PRIM), pour les horaires, les prochains passages et l'info trafic, comme décrit en section 3.</li>
+      <li><strong>Apple</strong>, pour la recherche d'adresse, la carte, les notifications et la sauvegarde.</li>
+    </ul>
+    <p>Personne d'autre. Pas de régie publicitaire, pas d'outil de mesure d'audience, pas de courtier en données, pas de revente.</p>
+  </section>
+
+  <section id="transferts">
+    <h2>7. Hors de l'Union européenne</h2>
+    <p>Le serveur MARGE est hébergé dans l'Union européenne (Hetzner Online GmbH, en Allemagne). Île-de-France Mobilités est un établissement public français. La recherche d'adresse et la carte relèvent d'Apple, qui décrit ses propres transferts dans sa politique de confidentialité.</p>
+  </section>
+
+  <section id="suivi">
+    <h2>8. Pas de suivi</h2>
+    <p>MARGE n'utilise aucun traceur, aucun identifiant publicitaire, aucun outil d'analyse ou de rapport de plantage tiers. Elle ne te suit pas d'une app à l'autre et ne crée pas de profil.</p>
+  </section>
+
+  <section id="droits">
+    <h2>9. Tes droits</h2>
+    <p>Tu as le droit d'accéder à tes données, de les corriger, de les effacer, d'en limiter l'usage, de t'opposer à leur traitement et de les récupérer.</p>
+    <ul>
+      <li><strong>Voir et corriger</strong> : tout est dans l'app (Mes habitudes, Paramètres).</li>
+      <li><strong>Effacer</strong> : Paramètres &gt; Confidentialité &gt; Effacer mes données. Cela efface tes lieux, ton heure, tes jours, ta marge, tes lignes, ton compteur, les alertes prévues et les notifications déjà affichées. Supprimer l'app efface aussi tout ce qu'elle garde sur ton iPhone.</li>
+      <li><strong>Sur le serveur</strong> : il ne garde rien qui permette de te reconnaître. Il n'y a donc rien à te transmettre ni à effacer au-delà de quelques minutes de cache, qui disparaissent seuls.</li>
+      <li><strong>Pour toute question ou demande</strong> : écris à <a href="mailto:dioufibrahima02@gmail.com">dioufibrahima02@gmail.com</a>. Réponse sous un mois.</li>
+    </ul>
+  </section>
+
+  <section id="mineurs">
+    <h2>10. Mineurs</h2>
+    <p>MARGE ne demande pas ton âge et ne s'adresse pas spécialement aux enfants. Elle peut servir pour aller au collège ou au lycée. Si tu as moins de 15 ans, parles-en avec un parent avant de l'utiliser.</p>
+  </section>
+
+  <section id="reclamation">
+    <h2>11. Réclamation</h2>
+    <p>Si tu penses que tes droits ne sont pas respectés, tu peux adresser une réclamation à la CNIL : <a href="https://www.cnil.fr/fr/plaintes">cnil.fr/fr/plaintes</a>, ou CNIL, 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07.</p>
+  </section>
+
+  <section id="modifications">
+    <h2>12. Modifications</h2>
+    <p>Cette page change quand MARGE change sa façon de traiter tes données. La date en haut de page dit la dernière version. Si un changement touche à ce qui sort de ton téléphone (par exemple l'usage de ta position GPS), l'app te le dira avant.</p>
+  </section>
+
+  <footer>
+    <p>Les horaires viennent d'Île-de-France Mobilités et peuvent changer sans préavis. MARGE ne garantit pas ton heure d'arrivée.</p>
+  </footer>
+</main>
+</body>
+</html>
