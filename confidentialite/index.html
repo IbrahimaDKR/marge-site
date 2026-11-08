@@ -108,12 +108,13 @@
   <section class="summary">
     <h2>En bref</h2>
     <ul>
-      <li>Pas de compte, pas d'identifiant, pas de publicité, pas de mesure d'audience, pas de revente.</li>
+      <li>Pas de compte, pas de publicité, pas de mesure d'audience, pas de revente. Un seul identifiant, et seulement si tu actives le suivi app fermée : le jeton d'envoi d'Apple, propre à un trajet et effacé avec lui.</li>
       <li>Tes lieux, ton heure et tes jours sont gardés sur ton iPhone.</li>
       <li>Ta position n'est lue que si tu l'autorises, quand MARGE est ouverte à l'écran, et pendant un trajet suivi même si tu quittes l'app (l'iPhone affiche alors son indicateur bleu). Jamais en arrière-plan en dehors d'un trajet.</li>
       <li>Pour calculer ton trajet, MARGE envoie à son serveur la position de ton domicile et de ton travail <strong>arrondie à environ 100 m</strong> et ton heure d'arrivée. Le serveur interroge Île-de-France Mobilités, ne garde la réponse que 15 minutes au plus et n'écrit ces positions dans aucun journal.</li>
+      <li>Si tu actives le suivi app fermée, ton trajet en cours (lignes, arrêts, heures, sans position ni nom de lieu) reste sur le serveur MARGE jusqu'à la fin du trajet, pour tenir ton écran verrouillé à jour. Sans cette option, le serveur ne suit pas ton trajet.</li>
       <li>Si tu poses une question à MARGE, et seulement après ton accord, le texte de ta question, les noms de tes lieux et les noms des lignes de ton trajet sont lus par une IA : Claude, d'Anthropic. Jamais ta voix, tes adresses ni ta position.</li>
-      <li>Tu effaces tout ce que garde ton iPhone depuis l'app : Paramètres &gt; Confidentialité &gt; Effacer mes données.</li>
+      <li>Tu effaces tes données depuis l'app : Paramètres &gt; Confidentialité &gt; Effacer mes données. Cela efface ce que garde ton iPhone et demande au serveur d'oublier ton trajet suivi.</li>
     </ul>
   </section>
 
@@ -150,7 +151,7 @@
         <tr>
           <td>Heure d'arrivée voulue</td>
           <td data-label="Pourquoi">Chercher les trajets qui t'amènent à l'heure</td>
-          <td data-label="Où elle va">Gardée sur ton iPhone, et envoyée au serveur avec chaque recherche (le serveur l'arrondit à la minute).</td>
+          <td data-label="Où elle va">Gardée sur ton iPhone, et envoyée au serveur avec chaque recherche (le serveur l'arrondit à la minute). Si tu actives le suivi app fermée, le serveur la garde le temps du trajet suivi.</td>
         </tr>
         <tr>
           <td>Jours de trajet</td>
@@ -160,7 +161,7 @@
         <tr>
           <td>Marge d'arrivée (l'avance que tu veux garder)</td>
           <td data-label="Pourquoi">Choisir le bon départ</td>
-          <td data-label="Où elle va">Reste sur ton iPhone.</td>
+          <td data-label="Où elle va">Gardée sur ton iPhone. Si tu actives le suivi app fermée, envoyée au serveur pour un trajet avec une heure de rendez-vous, le temps de ce trajet.</td>
         </tr>
         <tr>
           <td>Lignes de ton trajet habituel, lignes à éviter pour un plan B</td>
@@ -193,9 +194,14 @@
           <td data-label="Où elle va">Relevés auprès du serveur (les lignes, l'arrêt où tu montes et celui où tu descends, l'heure d'arrivée ; aucune position), puis gardés sur ton iPhone jusqu'à l'heure du trajet.</td>
         </tr>
         <tr>
+          <td>Trajet suivi app fermée (seulement si tu l'actives) : le jeton d'envoi d'Apple, un numéro tiré au hasard pour ce trajet, les lignes, les arrêts de chaque véhicule de la montée à la descente, le code du train, les heures de chaque étape, marches comprises, ton heure de rendez-vous et ta marge s'il y en a, et si tu es en route</td>
+          <td data-label="Pourquoi">Garder ton écran verrouillé à jour quand MARGE est fermée</td>
+          <td data-label="Où elle va">Envoyés au serveur MARGE quand le trajet s'affiche sur ton écran verrouillé, et de nouveau s'il change. Gardés jusqu'à la fin du trajet (sections 3 et 5). Aucune position, aucun nom de lieu.</td>
+        </tr>
+        <tr>
           <td>Notifications</td>
           <td data-label="Pourquoi">Te dire quand partir, et si ton trajet change</td>
-          <td data-label="Où elle va">Programmées et affichées par ton iPhone. Aucune notification ne vient d'un serveur.</td>
+          <td data-label="Où elle va">Les alertes de départ sont programmées et affichées par ton iPhone. Si tu actives le suivi app fermée, les mises à jour de ton écran verrouillé et leurs alertes (retard, annulation, correspondance) viennent du serveur MARGE et passent par Apple : des heures, jamais un nom de lieu ni de ligne.</td>
         </tr>
       </tbody>
     </table>
@@ -218,7 +224,7 @@
     <h2>3. Ce qui reste sur ton iPhone, ce qui passe par le serveur, ce qui va chez Île-de-France Mobilités</h2>
 
     <h3>Sur ton iPhone</h3>
-    <p>Tout ce que tu as réglé (domicile, travail, heure, jours, marge, lignes habituelles), tes lieux gardés, tes 5 derniers lieux cherchés, tes trajets préparés et leurs horaires prévus, le compteur de temps gagné et la liste des alertes. Ces données sont dans l'espace de l'app sur ton téléphone ; l'éditeur n'y a pas accès. Elles suivent la sauvegarde de ton iPhone (iCloud ou ordinateur) si elle est activée.</p>
+    <p>Tout ce que tu as réglé (domicile, travail, heure, jours, marge, lignes habituelles), tes lieux gardés, tes 5 derniers lieux cherchés, tes trajets préparés et leurs horaires prévus, le compteur de temps gagné, la liste des alertes et le dernier trajet affiché sur ton écran verrouillé. Ces données sont dans l'espace de l'app sur ton téléphone ; l'éditeur n'y a pas accès. Elles suivent la sauvegarde de ton iPhone (iCloud ou ordinateur) si elle est activée.</p>
     <p>Les notifications s'affichent sur ton écran verrouillé selon tes réglages iOS. Elles peuvent nommer ta destination (« Travail ») et tes lignes.</p>
 
     <h3>Sur le serveur MARGE</h3>
@@ -232,15 +238,32 @@
       <li>pour l'info trafic : les identifiants des lignes de ton trajet ;</li>
       <li>à bord d'un véhicule, environ une fois par minute : sa ligne, les arrêts qu'il lui reste à desservir et leurs heures (aucune position).</li>
     </ul>
-    <p>Ce qui n'est <strong>pas</strong> envoyé : ton nom, ton adresse en texte, un identifiant de compte ou d'appareil, ta marge, tes jours.</p>
+    <p>Ce qui n'est <strong>pas</strong> envoyé : ton nom, ton adresse en texte, un identifiant de compte ou un identifiant durable d'appareil, tes jours. Ta marge et un jeton d'envoi d'Apple ne partent que pour un trajet suivi app fermée (voir plus bas).</p>
     <p>Ce que fait le serveur :</p>
     <ul>
       <li>Il arrondit l'heure à la minute, puis demande les trajets à Île-de-France Mobilités.</li>
       <li>Il garde la réponse peu de temps, pour la partager entre demandes identiques : <strong>45 secondes</strong> (<strong>10 minutes</strong> pour un plan B). Il la garde ensuite <strong>15 minutes</strong> au plus (<strong>10</strong> pour des prochains passages) pour te la redonner, avec son âge, si Île-de-France Mobilités ne répond plus. Cette réponse contient l'itinéraire, donc des noms d'arrêts et de rues proches de ton domicile et de ton travail. Elle est rangée sous une clé hachée, en mémoire ou dans un dossier effacé dès qu'elle expire et à l'arrêt du serveur.</li>
-      <li>Il ne journalise ni les positions ni ton adresse IP. Ton adresse IP est vue par le serveur le temps de la connexion, comme pour tout site web, puis n'est pas conservée par MARGE. Pour qu'un seul appareil ne puisse pas épuiser les quotas partagés par tous, le serveur compte les demandes de chaque adresse : il ne garde pas l'adresse, seulement une empreinte non réversible, calculée avec une clé tirée au hasard qui ne vit qu'en mémoire, et ce compteur s'efface seul au bout de 24 heures au plus. Rien n'est écrit sur disque. Le serveur est loué chez Hetzner Online GmbH, en Allemagne ; son serveur web est réglé pour n'écrire aucun journal d'accès contenant l'adresse IP.</li>
+      <li>Il ne journalise ni les positions, ni ton adresse IP, ni les trajets suivis et leurs jetons. Ton adresse IP est vue par le serveur le temps de la connexion, comme pour tout site web, puis n'est pas conservée par MARGE. Pour qu'un seul appareil ne puisse pas épuiser les quotas partagés par tous, le serveur compte les demandes de chaque adresse : il ne garde pas l'adresse, seulement une empreinte non réversible, calculée avec une clé tirée au hasard qui ne vit qu'en mémoire, et ce compteur s'efface seul au bout de 24 heures au plus. Rien n'est écrit sur disque. Le serveur est loué chez Hetzner Online GmbH, en Allemagne ; son serveur web est réglé pour n'écrire aucun journal d'accès contenant l'adresse IP.</li>
     </ul>
     <p>Le serveur télécharge aussi des données publiques (ponctualité de la SNCF, sorties des gares, affluence habituelle, calendrier scolaire de l'Éducation nationale, horaires théoriques d'Île-de-France Mobilités). Il ne leur envoie rien sur toi. Pour les horaires théoriques, il garde la liste des lignes demandées ces 30 derniers jours, sans rien qui les relie à une personne, et n'importe que ces lignes-là.</p>
     <p>Pour savoir à quel point chaque ligne est en retard selon l'heure, le serveur compte, dans les réponses d'Île-de-France Mobilités, l'écart entre l'heure prévue et l'heure en direct des trains et bus sur le point de partir. Il ne garde que des compteurs par ligne, par heure et par type de jour (semaine ou week-end), pendant 8 semaines : ni position, ni arrêt, ni trajet, rien qui relie un compteur à une personne. Pour ne compter qu'une fois un même train vu par plusieurs utilisateurs, il garde 2 heures une empreinte faite de la ligne, de la direction et de l'heure prévue.</p>
+
+    <h3>Le suivi app fermée (seulement si tu l'actives)</h3>
+    <p>Une fois MARGE fermée, ton iPhone ne peut plus mettre à jour ton trajet seul. Avec cette option, le serveur MARGE le surveille et t'envoie ce qui change.</p>
+    <p><strong>Ce qui part et reste sur le serveur</strong>, dès que le trajet s'affiche sur ton écran verrouillé :</p>
+    <ul>
+      <li>le jeton d'envoi créé par Apple pour cet affichage ;</li>
+      <li>pour chaque véhicule : sa ligne, l'arrêt où tu montes, les arrêts suivants jusqu'à ta descente, leurs heures, le code du train ;</li>
+      <li>les heures de chaque étape, marches comprises ;</li>
+      <li>ton heure de rendez-vous et ta marge, s'il y en a ;</li>
+      <li>si tu es en route ou non.</li>
+    </ul>
+    <p>Ce qui ne part pas : ta position, tes adresses, le nom de tes lieux, ton nom.</p>
+    <p>Ces données ne disent pas qui tu es, mais l'arrêt où tu montes, celui où tu descends et le temps de marche autour donnent une idée du quartier d'où tu pars et où tu vas. Nous les traitons donc comme des données personnelles. Chaque trajet a un numéro tiré au hasard, jamais réutilisé : le serveur ne relie pas tes trajets entre eux et ne garde pas ton adresse IP avec eux.</p>
+    <p><strong>Combien de temps.</strong> Le trajet est effacé dès que sa fin t'a été envoyée, environ 10 minutes après l'arrivée. Si Apple ne peut pas la transmettre, 30 minutes après l'arrivée. Dans tous les cas, au plus 9 heures après l'envoi.</p>
+    <p><strong>Qui le reçoit.</strong> Hetzner héberge ce serveur en Allemagne. Les envois passent par les serveurs d'Apple avec leur jeton : ils contiennent des heures (départ, arrivée, chaque étape) et, pour une alerte, une phrase comme « Correspondance compromise » ou « Arrivée vers 8h42, après ton heure », jamais un nom de lieu ni de ligne. Un envoi non remis reste chez Apple 1 heure au plus.</p>
+    <p><strong>Comment l'éviter.</strong> Choisis « Seulement app ouverte » à la question posée la première fois, ou coupe « Suivi app fermée » dans Réglages : tu gardes l'écran verrouillé, mis à jour tant que MARGE est ouverte, et tes alertes de départ. Tu peux aussi couper les activités en direct (Réglages de l'iPhone &gt; MARGE) : plus rien ne s'affiche sur l'écran verrouillé et plus aucun nouveau trajet n'est envoyé. Si tu retires un trajet de ton écran verrouillé, le serveur l'efface dès que MARGE ou Apple le lui signale, sinon à la fin du trajet.</p>
+    <p><strong>Effacer.</strong> « Effacer mes données » arrête le trajet en cours et demande au serveur de l'effacer aussitôt. Sans réseau à ce moment-là, ou pour un trajet déjà retiré de l'écran verrouillé, il s'efface seul à la fin du trajet.</p>
 
     <h3>Chez Île-de-France Mobilités (plateforme PRIM)</h3>
     <p>Le serveur MARGE, et non ton iPhone, demande à Île-de-France Mobilités, via sa plateforme PRIM :</p>
@@ -265,7 +288,7 @@
     <p>Le serveur fait aussi lire par Claude les messages officiels d'info trafic d'Île-de-France Mobilités, pour savoir où et quand ils s'appliquent. Ce sont des textes publics : ils ne contiennent rien sur toi.</p>
 
     <h3>Chez Apple</h3>
-    <p>La recherche d'adresse (ce que tu tapes) et la carte du trajet (la zone affichée) passent par Apple Plans, sous la <a href="https://www.apple.com/fr/legal/privacy/">politique de confidentialité d'Apple</a>. Apple gère aussi l'affichage des notifications et la sauvegarde de ton iPhone.</p>
+    <p>La recherche d'adresse (ce que tu tapes) et la carte du trajet (la zone affichée) passent par Apple Plans, sous la <a href="https://www.apple.com/fr/legal/privacy/">politique de confidentialité d'Apple</a>. Apple gère aussi l'affichage des notifications et la sauvegarde de ton iPhone. Si tu actives le suivi app fermée, les mises à jour de ton écran verrouillé passent aussi par le service d'envoi d'Apple (voir plus haut).</p>
     <p>Quand MARGE te propose un plan B à Vélib', ton iPhone demande à Apple Plans le temps de marche jusqu'à la station, le temps à vélo entre les deux stations et le temps de marche jusqu'à ta destination. Apple reçoit pour cela le point de départ du plan B (ton lieu enregistré, ou ta position si tu as dit « Je suis parti » et autorisé la localisation), les deux stations et ta destination, comme pour n'importe quel itinéraire dans Plans. Ces points ne passent pas par le serveur MARGE.</p>
 
     <h3>Plans du réseau</h3>
@@ -281,8 +304,9 @@
       <li><strong>Calculer ton trajet et te prévenir</strong> (envoi des positions arrondies, de l'heure et des lignes au serveur, puis à Île-de-France Mobilités) : c'est le service que tu demandes en utilisant MARGE (article 6.1.b du RGPD).</li>
       <li><strong>Garder tes réglages sur ton iPhone</strong> : c'est strictement nécessaire au service que tu demandes, donc sans consentement à part (article 82 de la loi Informatique et Libertés).</li>
       <li><strong>Position et capteurs de mouvement</strong> : seulement avec ton autorisation, donnée dans la fenêtre d'iOS et retirable à tout moment dans les réglages de l'iPhone ; MARGE marche quand même, depuis tes lieux enregistrés.</li>
-      <li><strong>Notifications</strong> : seulement si tu les autorises dans la fenêtre d'iOS. Tu les coupes à tout moment dans les réglages de l'iPhone ; MARGE marche quand même.</li>
+      <li><strong>Notifications</strong> : les alertes de départ, seulement si tu les autorises dans la fenêtre d'iOS ; tu les coupes dans les réglages de l'iPhone. Les alertes du suivi app fermée ne concernent que le trajet en cours et seulement si tu as activé cette option. MARGE marche quand même sans.</li>
       <li><strong>Questions posées à MARGE</strong> : c'est un service que tu demandes en posant ta question (article 6.1.b du RGPD), après une information complète et ton accord dans l'app. MARGE marche quand même sans ; tu coupes cette fonction à tout moment.</li>
+      <li><strong>Suivi app fermée</strong> : c'est un service que tu demandes en l'activant (article 6.1.b du RGPD), après une information complète et ton accord dans l'app. L'accès au jeton d'envoi ne sert qu'à ce service (article 82 de la loi Informatique et Libertés). MARGE marche quand même sans ; tu le coupes à tout moment.</li>
       <li><strong>Adresse IP vue en transit</strong> : nécessaire pour que la connexion fonctionne et pour protéger le serveur (intérêt légitime, article 6.1.f), sans conservation par MARGE : seule une empreinte non réversible sert à compter les demandes, en mémoire, 24 heures au plus.</li>
     </ul>
   </section>
@@ -329,6 +353,18 @@
           <td data-label="Durée">Aucune conservation par le serveur MARGE. Chez Anthropic : 30 jours au plus, 2 ans au plus si elles sont signalées pour abus</td>
         </tr>
         <tr>
+          <td>Trajet suivi app fermée, sur le serveur</td>
+          <td data-label="Durée">Environ 10 minutes après l'arrivée, 30 minutes si Apple ne répond pas, 9 heures au plus</td>
+        </tr>
+        <tr>
+          <td>Envoi en attente chez Apple</td>
+          <td data-label="Durée">1 heure au plus</td>
+        </tr>
+        <tr>
+          <td>Dernier trajet affiché sur l'écran verrouillé, sur ton iPhone</td>
+          <td data-label="Durée">Jusqu'au trajet suivant, à la fin du trajet si l'app est ouverte, ou jusqu'à ce que tu effaces tes données</td>
+        </tr>
+        <tr>
           <td>Positions et adresse IP dans les journaux du serveur</td>
           <td data-label="Durée">Aucune : elles n'y sont pas écrites</td>
         </tr>
@@ -346,7 +382,7 @@
     <ul>
       <li><strong>L'hébergeur du serveur MARGE</strong>, qui agit pour le compte de l'éditeur : Hetzner Online GmbH, serveur en Allemagne.</li>
       <li><strong>Île-de-France Mobilités</strong> (plateforme PRIM), pour les horaires, les prochains passages et l'info trafic, comme décrit en section 3.</li>
-      <li><strong>Apple</strong>, pour la recherche d'adresse, la carte, les temps de marche et de vélo du plan B Vélib', les notifications et la sauvegarde.</li>
+      <li><strong>Apple</strong>, pour la recherche d'adresse, la carte, les temps de marche et de vélo du plan B Vélib', les notifications, l'acheminement des mises à jour du suivi app fermée et la sauvegarde.</li>
       <li><strong>Anthropic</strong> (Anthropic Ireland, Limited, avec Anthropic, PBC, aux États-Unis), qui agit pour le compte de l'éditeur, pour comprendre les questions posées à MARGE et lire les messages publics d'info trafic, comme décrit en section 3.</li>
     </ul>
     <p>Personne d'autre. Pas de régie publicitaire, pas d'outil de mesure d'audience, pas de courtier en données, pas de revente.</p>
@@ -354,13 +390,13 @@
 
   <section id="transferts">
     <h2>7. Hors de l'Union européenne</h2>
-    <p>Le serveur MARGE est hébergé dans l'Union européenne (Hetzner Online GmbH, en Allemagne). Île-de-France Mobilités est un établissement public français. La recherche d'adresse et la carte relèvent d'Apple, qui décrit ses propres transferts dans sa politique de confidentialité.</p>
+    <p>Le serveur MARGE est hébergé dans l'Union européenne (Hetzner Online GmbH, en Allemagne). Île-de-France Mobilités est un établissement public français. La recherche d'adresse, la carte et l'acheminement des mises à jour de l'écran verrouillé relèvent d'Apple, qui décrit ses propres transferts dans sa politique de confidentialité.</p>
     <p>Les questions posées à MARGE peuvent être traitées aux États-Unis par Anthropic. Ce transfert est encadré par les clauses contractuelles types de la Commission européenne, incluses dans l'accord de traitement des données d'Anthropic.</p>
   </section>
 
   <section id="suivi">
-    <h2>8. Pas de suivi</h2>
-    <p>MARGE n'utilise aucun traceur, aucun identifiant publicitaire, aucun outil d'analyse ou de rapport de plantage tiers. Elle ne te suit pas d'une app à l'autre et ne crée pas de profil.</p>
+    <h2>8. Pas de pistage</h2>
+    <p>MARGE n'utilise aucun traceur, aucun identifiant publicitaire, aucun outil d'analyse ou de rapport de plantage tiers. Elle ne te piste pas d'une app à l'autre et ne crée pas de profil.</p>
   </section>
 
   <section id="droits">
@@ -369,8 +405,8 @@
     <p>En pratique :</p>
     <ul>
       <li><strong>Voir et corriger</strong> : tout est dans l'app (Mes habitudes, Paramètres).</li>
-      <li><strong>Effacer</strong> : Paramètres &gt; Confidentialité &gt; Effacer mes données. Cela efface tes lieux, ton heure, tes jours, ta marge, tes lignes, ton compteur, les alertes prévues et les notifications déjà affichées. Supprimer l'app efface aussi tout ce qu'elle garde sur ton iPhone.</li>
-      <li><strong>Sur le serveur</strong> : il ne garde rien qui permette de te reconnaître. Il n'y a donc rien à te transmettre ni à effacer au-delà de quelques minutes de cache et du compteur de demandes de ton appareil (une empreinte non réversible, 24 heures au plus), qui disparaissent seuls.</li>
+      <li><strong>Effacer</strong> : Paramètres &gt; Confidentialité &gt; Effacer mes données. Cela efface tes lieux, ton heure, tes jours, ta marge, tes lignes, ton compteur, le dernier trajet affiché, les alertes prévues et les notifications déjà affichées, arrête le trajet en cours et demande au serveur de l'effacer. Supprimer l'app efface aussi tout ce qu'elle garde sur ton iPhone, mais pas ce trajet sur le serveur, qui s'efface seul à la fin du trajet.</li>
+      <li><strong>Sur le serveur</strong> : il ne garde ni ton nom ni ton adresse IP, et ne peut pas retrouver tes données à partir de ton nom ou de ton e-mail. Il ne garde que quelques minutes de cache, le compteur de demandes de ton appareil (une empreinte non réversible, 24 heures au plus) et, si tu as activé le suivi app fermée, le trajet en cours, sous un numéro que seul ton iPhone connaît. Tout disparaît seul aux durées de la section 5. « Effacer mes données » efface tout de suite le trajet en cours, si ton iPhone a du réseau.</li>
       <li><strong>Chez Anthropic</strong> : ces textes ne sont reliés ni à un compte ni à un appareil : MARGE ne peut pas les retrouver pour toi, et « Effacer mes données » ne les atteint pas. Ils s'effacent seuls sous 30 jours (jusqu'à 2 ans s'ils sont signalés pour abus).</li>
       <li><strong>Pour toute question ou demande</strong> : écris à <a href="mailto:dioufibrahima02@gmail.com">dioufibrahima02@gmail.com</a>. Réponse sous un mois.</li>
     </ul>
