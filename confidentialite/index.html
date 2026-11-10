@@ -98,7 +98,7 @@
   <header>
     <p class="brand">MARGE</p>
     <h1>Politique de confidentialité</h1>
-    <p class="updated">Dernière mise à jour : 8 novembre 2026</p>
+    <p class="updated">Dernière mise à jour : 10 novembre 2026</p>
   </header>
 
   <section>
@@ -111,7 +111,7 @@
       <li>Pas de compte, pas de publicité, pas de mesure d'audience, pas de revente. Un seul identifiant, et seulement si tu actives le suivi app fermée : le jeton d'envoi d'Apple, propre à un trajet et effacé avec lui.</li>
       <li>Tes lieux, ton heure et tes jours sont gardés sur ton iPhone.</li>
       <li>Ta position n'est lue que si tu l'autorises, quand MARGE est ouverte à l'écran, et pendant un trajet suivi même si tu quittes l'app (l'iPhone affiche alors son indicateur bleu). Jamais en arrière-plan en dehors d'un trajet.</li>
-      <li>Pour calculer ton trajet, MARGE envoie à son serveur la position de ton domicile et de ton travail <strong>arrondie à environ 100 m</strong> et ton heure d'arrivée. Le serveur interroge Île-de-France Mobilités, ne garde la réponse que 15 minutes au plus et n'écrit ces positions dans aucun journal.</li>
+      <li>Pour calculer ton trajet, MARGE envoie à son serveur la position de ton domicile et de ton travail <strong>à environ 10 m près</strong> et ton heure d'arrivée. À 10 m près, c'est pratiquement ton adresse : il faut cette précision pour que le temps de marche jusqu'à l'arrêt soit juste (à 100 m près, il était faux de plusieurs minutes). Le serveur interroge Île-de-France Mobilités, ne garde la réponse que 15 minutes au plus et n'écrit ces positions dans aucun journal.</li>
       <li>Si tu actives le suivi app fermée, ton trajet en cours (lignes, arrêts, heures, sans position ni nom de lieu) reste sur le serveur MARGE jusqu'à la fin du trajet, pour tenir ton écran verrouillé à jour. Sans cette option, le serveur ne suit pas ton trajet.</li>
       <li>Si tu poses une question à MARGE, et seulement après ton accord, le texte de ta question, les noms de tes lieux et les noms des lignes de ton trajet sont lus par une IA : Claude, d'Anthropic. Jamais ta voix, tes adresses ni ta position.</li>
       <li>Tu effaces tes données depuis l'app : Paramètres &gt; Confidentialité &gt; Effacer mes données. Cela efface ce que garde ton iPhone et demande au serveur d'oublier ton trajet suivi.</li>
@@ -136,7 +136,7 @@
         <tr>
           <td>Adresses de ton domicile et de ton travail (texte de l'adresse et position exacte)</td>
           <td data-label="Pourquoi">Savoir d'où tu pars et où tu vas</td>
-          <td data-label="Où elle va">Gardées sur ton iPhone. Seule une position <strong>arrondie à environ 100 m</strong> part vers le serveur MARGE (voir section 3).</td>
+          <td data-label="Où elle va">Gardées sur ton iPhone. Seule leur position, <strong>à environ 10 m près</strong>, part vers le serveur MARGE (voir section 3).</td>
         </tr>
         <tr>
           <td>Ce que tu tapes pour chercher une adresse</td>
@@ -186,7 +186,7 @@
         <tr>
           <td>Lieux gardés, 5 derniers lieux cherchés, trajets préparés (départ, arrivée, jour et heure)</td>
           <td data-label="Pourquoi">Retrouver un lieu d'un geste, te prévenir à l'heure de partir</td>
-          <td data-label="Où elle va">Restent sur ton iPhone. Pour calculer un trajet préparé, ses deux positions arrondies à environ 100 m et son heure partent au serveur, comme pour ton trajet habituel.</td>
+          <td data-label="Où elle va">Restent sur ton iPhone. Pour calculer un trajet préparé, ses deux positions, à environ 10 m près, et son heure partent au serveur, comme pour ton trajet habituel.</td>
         </tr>
         <tr>
           <td>Horaires prévus de tes trajets (habituel et préparés)</td>
@@ -209,14 +209,14 @@
     <ul>
       <li>quand tu cherches un trajet dans « Où vas-tu ? » en partant de ta position ;</li>
       <li>quand tu as dit « Je suis parti » et qu'un plan B est cherché, si tu l'as déjà autorisée (MARGE ne la redemande pas à ce moment-là) ;</li>
-      <li>tant que MARGE est ouverte, et pendant un trajet suivi, toutes les 2 minutes, pour savoir si tu es chez toi, au travail ou ailleurs et te montrer le bon trajet. Chez toi ou au travail, rien ne part. Ailleurs, le trajet part de là où tu es (« Depuis ta position ») : ta position part alors au serveur MARGE, arrondie à environ 100 m, comme une adresse. De même quand tu as dit « Je suis parti » et qu'un plan B est cherché : il part de là où tu es ;</li>
-      <li>pendant ton trajet (le trajet habituel, ou celui que tu as démarré avec GO), pour voir où tu en es et te dire à quelle allure marcher : de 20 minutes avant l'heure de partir jusqu'à 10 minutes après l'arrivée prévue, ton iPhone suit ta position en continu et la compare aux tracés des trajets proposés. Il voit ainsi si tu es parti, si tu marches vers un arrêt, dans quel bus, métro ou train tu es monté, même si ce n'est pas celui du billet, et quand tu es arrivé. Ce suivi commence seulement MARGE ouverte à l'écran ; il continue ensuite quand tu quittes l'app, téléphone en poche, avec l'indicateur bleu de l'iPhone, et s'arrête seul à la fin du trajet (au plus 15 minutes après que MARGE a cessé de le demander). Ces positions restent dans la mémoire de l'app 20 minutes au plus et ne sortent pas du téléphone. Une fois que tu es parti à pied, le trajet est recalculé depuis là où tu es : seule cette position part au serveur MARGE, arrondie à environ 100 m, comme une adresse, et de nouveau tous les 200 mètres environ ;</li>
+      <li>tant que MARGE est ouverte, et pendant un trajet suivi, toutes les 2 minutes, pour savoir si tu es chez toi, au travail ou ailleurs et te montrer le bon trajet. Chez toi ou au travail, rien ne part. Ailleurs, le trajet part de là où tu es (« Depuis ta position ») : ta position part alors au serveur MARGE, à environ 10 m près, comme une adresse. De même quand tu as dit « Je suis parti » et qu'un plan B est cherché : il part de là où tu es ;</li>
+      <li>pendant ton trajet (le trajet habituel, ou celui que tu as démarré avec GO), pour voir où tu en es et te dire à quelle allure marcher : de 20 minutes avant l'heure de partir jusqu'à 10 minutes après l'arrivée prévue, ton iPhone suit ta position en continu et la compare aux tracés des trajets proposés. Il voit ainsi si tu es parti, si tu marches vers un arrêt, dans quel bus, métro ou train tu es monté, même si ce n'est pas celui du billet, et quand tu es arrivé. Ce suivi commence seulement MARGE ouverte à l'écran ; il continue ensuite quand tu quittes l'app, téléphone en poche, avec l'indicateur bleu de l'iPhone, et s'arrête seul à la fin du trajet (au plus 15 minutes après que MARGE a cessé de le demander). Ces positions restent dans la mémoire de l'app 20 minutes au plus et ne sortent pas du téléphone. Une fois que tu es parti à pied, le trajet est recalculé depuis là où tu es : seule cette position part au serveur MARGE, à environ 10 m près, comme une adresse, et de nouveau tous les 200 mètres environ ;</li>
       <li>sur la carte d'une marche, si tu demandes « Me situer sur la carte » : ta position s'affiche sur ton iPhone et n'est envoyée nulle part ;</li>
       <li>quand tu choisis « Ma position » à la place d'une adresse (Maison, Travail, un autre départ, la destination d'un trajet préparé) : ta position part chez Apple Plans pour trouver l'adresse où tu es, puis cette adresse et sa position sont gardées sur ton iPhone comme un lieu que tu aurais tapé.</li>
     </ul>
-    <p>Jamais quand l'app est fermée, ni en arrière-plan en dehors d'un trajet suivi. Elle n'est écrite sur ton iPhone que si tu la choisis comme adresse (« Ma position ») ; sinon elle reste dans la mémoire de l'app 20 minutes au plus, puis disparaît. Pour le serveur MARGE, elle est arrondie comme tes adresses (voir section 3). Tu peux la refuser ou la retirer dans les Réglages de l'iPhone ; MARGE part alors de tes lieux enregistrés et ne dit « en route » que si tu lui dis « Je suis parti ». Si une version future veut s'en servir autrement, elle te demandera d'abord ton accord et cette page sera mise à jour avant.</p>
+    <p>Jamais quand l'app est fermée, ni en arrière-plan en dehors d'un trajet suivi. Elle n'est écrite sur ton iPhone que si tu la choisis comme adresse (« Ma position ») ; sinon elle reste dans la mémoire de l'app 20 minutes au plus, puis disparaît. Vers le serveur MARGE, elle part à environ 10 m près, comme tes adresses (voir section 3). Tu peux la refuser ou la retirer dans les Réglages de l'iPhone ; MARGE part alors de tes lieux enregistrés et ne dit « en route » que si tu lui dis « Je suis parti ». Si une version future veut s'en servir autrement, elle te demandera d'abord ton accord et cette page sera mise à jour avant.</p>
     <p><strong>Les capteurs de mouvement.</strong> Seulement si tu actives « Capteurs de mouvement » dans Réglages ; l'iPhone te demande alors l'accès (« Mouvements et forme »). Autour de l'heure de ton bus ou de ton train, MARGE lit sur ton iPhone l'activité qu'il a reconnue depuis 10 minutes avant le départ (à l'arrêt, à pied, en véhicule) pour confirmer que tu es monté. Elle ne suffit jamais seule : il faut aussi une position sur la ligne. Rien n'est gardé, rien n'est envoyé. Tu coupes l'accès à tout moment, dans Réglages ou dans les Réglages de l'iPhone.</p>
-    <p><strong>Ton calendrier.</strong> MARGE ne le lit que si tu actives « Lire mes rendez-vous » dans Réglages ; l'iPhone te demande alors l'accès. Elle lit sur ton iPhone tes rendez-vous d'aujourd'hui et de demain, et te propose de te prévenir pour ceux qui ont un lieu. Rien n'est planifié sans ton « Oui ». Ton calendrier ne sort pas du téléphone. Pour un rendez-vous proposé, le lieu écrit dans l'événement part chez Apple Plans pour le trouver sur la carte, et sa position, arrondie à environ 100 m, part au serveur MARGE avec l'heure du rendez-vous pour calculer le trajet, comme un lieu cherché dans « Où vas-tu ? ». Les rendez-vous acceptés (titre, heure, lieu) restent sur ton iPhone jusqu'à leur heure. Tu peux couper l'accès à tout moment, dans Réglages ou dans les Réglages de l'iPhone.</p>
+    <p><strong>Ton calendrier.</strong> MARGE ne le lit que si tu actives « Lire mes rendez-vous » dans Réglages ; l'iPhone te demande alors l'accès. Elle lit sur ton iPhone tes rendez-vous d'aujourd'hui et de demain, et te propose de te prévenir pour ceux qui ont un lieu. Rien n'est planifié sans ton « Oui ». Ton calendrier ne sort pas du téléphone. Pour un rendez-vous proposé, le lieu écrit dans l'événement part chez Apple Plans pour le trouver sur la carte, et sa position, à environ 10 m près, part au serveur MARGE avec l'heure du rendez-vous pour calculer le trajet, comme un lieu cherché dans « Où vas-tu ? ». Les rendez-vous acceptés (titre, heure, lieu) restent sur ton iPhone jusqu'à leur heure. Tu peux couper l'accès à tout moment, dans Réglages ou dans les Réglages de l'iPhone.</p>
     <p><strong>Mode démo.</strong> En mode démo, le trajet d'exemple a des horaires fictifs et n'envoie rien au serveur. Une recherche que tu lances toi-même (« Où vas-tu ? », un trajet préparé, une question à MARGE) reste une vraie recherche : elle part comme décrit en section 3.</p>
   </section>
 
@@ -230,7 +230,7 @@
     <h3>Sur le serveur MARGE</h3>
     <p>À chaque recherche de trajet, ton iPhone envoie au serveur MARGE, par une connexion chiffrée :</p>
     <ul>
-      <li>la position de ton domicile et de ton travail (ou ta position, quand le trajet part de là où tu es : voir plus haut), <strong>arrondie par ton iPhone à 3 décimales</strong> (environ 100 m) avant tout envoi ;</li>
+      <li>la position de ton domicile et de ton travail (ou ta position, quand le trajet part de là où tu es : voir plus haut), <strong>arrondie par ton iPhone à 4 décimales</strong> (environ 10 m) avant tout envoi ;</li>
       <li>ton heure d'arrivée (ou, quand tous les trajets sont partis, l'heure de maintenant) ;</li>
       <li>les identifiants des lignes de ton trajet habituel, et ceux des lignes à éviter pour un plan B ;</li>
       <li>pour les prochains passages : l'arrêt où tu montes, la ligne, l'heure et le code de ton train ;</li>
@@ -268,11 +268,11 @@
     <h3>Chez Île-de-France Mobilités (plateforme PRIM)</h3>
     <p>Le serveur MARGE, et non ton iPhone, demande à Île-de-France Mobilités, via sa plateforme PRIM :</p>
     <ul>
-      <li>les trajets entre les deux positions arrondies, pour l'heure arrondie à la minute, en laissant de côté les lignes à éviter ;</li>
+      <li>les trajets entre les deux positions (à environ 10 m près), pour l'heure arrondie à la minute, en laissant de côté les lignes à éviter ;</li>
       <li>les prochains passages à ton arrêt, et ceux de la ligne de ton véhicule quand tu es à bord (la ligne seulement : ni ton arrêt, ni ta position) ;</li>
       <li>l'info trafic de tout le réseau, en un seul appel commun à tous les utilisateurs.</li>
     </ul>
-    <p>Île-de-France Mobilités ne reçoit ni ton adresse IP, ni un identifiant, ni ton nom : seulement ces positions arrondies, cette heure et ces arrêts, venant du serveur MARGE. Elle traite ces demandes sous sa propre responsabilité (<a href="https://prim.iledefrance-mobilites.fr/fr/conditions-utilisation">conditions d'utilisation de PRIM</a>).</p>
+    <p>Île-de-France Mobilités ne reçoit ni ton adresse IP, ni un identifiant, ni ton nom : seulement ces positions à environ 10 m près, cette heure et ces arrêts, venant du serveur MARGE. Elle traite ces demandes sous sa propre responsabilité (<a href="https://prim.iledefrance-mobilites.fr/fr/conditions-utilisation">conditions d'utilisation de PRIM</a>).</p>
 
     <h3>Chez Anthropic (Claude, une IA)</h3>
     <p>Seulement si tu touches le micro ou poses une question à MARGE, et après l'accord que l'app te demande la première fois. Sans cet accord, rien ne part. Tu peux le retirer à tout moment dans Paramètres > « Demander à MARGE » : le micro disparaît et plus rien ne part.</p>
@@ -301,7 +301,7 @@
   <section id="base-legale">
     <h2>4. Sur quelle base</h2>
     <ul>
-      <li><strong>Calculer ton trajet et te prévenir</strong> (envoi des positions arrondies, de l'heure et des lignes au serveur, puis à Île-de-France Mobilités) : c'est le service que tu demandes en utilisant MARGE (article 6.1.b du RGPD).</li>
+      <li><strong>Calculer ton trajet et te prévenir</strong> (envoi des positions, de l'heure et des lignes au serveur, puis à Île-de-France Mobilités) : c'est le service que tu demandes en utilisant MARGE (article 6.1.b du RGPD).</li>
       <li><strong>Garder tes réglages sur ton iPhone</strong> : c'est strictement nécessaire au service que tu demandes, donc sans consentement à part (article 82 de la loi Informatique et Libertés).</li>
       <li><strong>Position et capteurs de mouvement</strong> : seulement avec ton autorisation, donnée dans la fenêtre d'iOS et retirable à tout moment dans les réglages de l'iPhone ; MARGE marche quand même, depuis tes lieux enregistrés.</li>
       <li><strong>Notifications</strong> : les alertes de départ, seulement si tu les autorises dans la fenêtre d'iOS ; tu les coupes dans les réglages de l'iPhone. Les alertes du suivi app fermée ne concernent que le trajet en cours et seulement si tu as activé cette option. MARGE marche quand même sans.</li>
