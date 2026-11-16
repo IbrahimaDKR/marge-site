@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>MARGE · Quais des gares (OpenStreetMap)</title>
+<meta name="description" content="D'où viennent les quais des gares utilisés par MARGE, sous quelle licence, et comment refaire l'extrait.">
+<style>
+  :root {
+    --page: #FBF6EE;
+    --card: #FFFDFA;
+    --ink: #14233A;
+    --soft: #596475;
+    --green: #296A3B;
+    --green-soft: #DAF4D4;
+    --fox: #F67F2F;
+    --line: #EAE3D8;
+    --todo-bg: #FDE1A7;
+    --todo-ink: #7E4F04;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --page: #141A22;
+      --card: #1C2430;
+      --ink: #F3EEE6;
+      --soft: #B3BCC8;
+      --green: #8FD19E;
+      --green-soft: #1F3A28;
+      --fox: #F7924F;
+      --line: #2C3644;
+      --todo-bg: #4A3510;
+      --todo-ink: #FDE1A7;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 28px 16px 56px; }
+  header { margin-bottom: 24px; }
+  .brand { font-weight: 800; letter-spacing: .14em; color: var(--fox); font-size: 15px; margin: 0 0 6px; }
+  h1 { font-size: 30px; line-height: 1.2; margin: 0 0 8px; font-weight: 800; }
+  .updated { color: var(--soft); margin: 0; font-size: 15px; }
+  h2 { font-size: 21px; line-height: 1.3; margin: 0 0 12px; font-weight: 800; }
+  h3 { font-size: 17px; margin: 20px 0 6px; font-weight: 800; }
+  p, li { margin: 0 0 10px; }
+  ul { padding-left: 20px; margin: 0 0 10px; }
+  a { color: var(--green); text-underline-offset: 2px; }
+  strong { font-weight: 700; }
+  section {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 20px 18px;
+    margin: 0 0 14px;
+  }
+  .summary { background: var(--green-soft); }
+  .summary h2 { color: var(--green); }
+  .soft { color: var(--soft); }
+  .todo {
+    display: inline;
+    background: var(--todo-bg);
+    color: var(--todo-ink);
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 6px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 15.5px; margin: 4px 0 8px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 8px; border-top: 1px solid var(--line); }
+  th { font-weight: 800; color: var(--soft); font-size: 14px; border-top: 0; }
+  td:first-child { font-weight: 700; }
+  /* Phones: each row becomes a small block, so nothing scrolls sideways. */
+  @media (max-width: 600px) {
+    table, tbody, tr, td { display: block; width: 100%; }
+    thead { display: none; }
+    tr { border-top: 1px solid var(--line); padding: 10px 0; }
+    td { border: 0; padding: 2px 0; }
+    td[data-label]::before {
+      content: attr(data-label) " : ";
+      color: var(--soft);
+      font-weight: 700;
+    }
+    td:first-child::before { content: none; }
+    td:first-child { font-size: 16.5px; margin-bottom: 2px; }
+  }
+  footer { color: var(--soft); font-size: 14px; text-align: center; margin-top: 24px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Quais des gares : l'extrait d'OpenStreetMap</h1>
+  <p>MARGE se sert du contour des quais des gares d'Île-de-France pour reconnaître que tu es sur le quai, même à son bout. Ces contours viennent d'OpenStreetMap.</p>
+
+  <h2>Source et licence</h2>
+  <p>© les contributeurs d'<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>. Les données sont sous licence <a href="https://opendatacommons.org/licenses/odbl/1-0/">Open Database License (ODbL) 1.0</a>. Tu peux les réutiliser aux mêmes conditions.</p>
+
+  <h2>Ce que contient l'extrait</h2>
+  <p>Tous les objets marqués « railway=platform » en Île-de-France : les quais dessinés comme une surface ou comme une ligne, et le contour extérieur de ceux dessinés comme une relation. Pour chacun, MARGE garde seulement la suite de ses points (latitude, longitude). Aucun nom, aucun identifiant.</p>
+  <p>Les contours ne sont ni corrigés ni complétés avec une autre source. Seul changement : un point qui s'écarte de moins de 1,5 mètre de la ligne entre ses voisins est retiré, pour alléger le fichier.</p>
+
+  <h2>Comment le refaire</h2>
+  <p>Une seule requête, envoyée au service public <a href="https://overpass-api.de/">Overpass</a> (adresse : <code>https://overpass-api.de/api/interpreter</code>) :</p>
+  <pre style="white-space:pre-wrap;word-break:break-all"><code>[out:json][timeout:180];area[&quot;ISO3166-2&quot;=&quot;FR-IDF&quot;][admin_level=4]-&gt;.idf;(way[railway=platform](area.idf);relation[railway=platform](area.idf););out geom;</code></pre>
+  <p>Le serveur de MARGE la refait environ une fois par mois. Le fichier obtenu porte la date de l'extrait et celle des données d'OpenStreetMap (« osmBase »). Le programme qui fait l'extrait est la commande <code>marge:platforms</code> du serveur (fichiers <code>PlatformStore.php</code> et <code>Platforms.php</code>).</p>
+
+  <h2>Comment MARGE s'en sert</h2>
+  <p>Quand tu demandes un trajet en train ou en RER, le serveur joint à la réponse les quais situés à moins de 250 mètres de l'arrêt où tu montes, avec la mention de la licence. La comparaison avec ta position se fait sur ton iPhone : ta position n'est pas envoyée pour cela. Le rail de la ligne, lui, vient des horaires d'Île-de-France Mobilités ; les deux sources restent séparées.</p>
+
+  <p><a href="../../confidentialite/">Politique de confidentialité de MARGE</a></p>
+</main>
+</body>
+</html>
