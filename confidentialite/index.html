@@ -98,7 +98,7 @@
   <header>
     <p class="brand">MARGE</p>
     <h1>Politique de confidentialité</h1>
-    <p class="updated">Dernière mise à jour : 20 novembre 2026</p>
+    <p class="updated">Dernière mise à jour : 21 novembre 2026</p>
   </header>
 
   <section>
@@ -217,6 +217,11 @@
           <td>Trajet suivi app fermée (seulement si tu l'actives) : le jeton d'envoi d'Apple, un numéro tiré au hasard pour ce trajet, les lignes, les arrêts de chaque véhicule de la montée à la descente, le code du train, les heures de chaque étape, marches comprises, le retard qu'Île-de-France Mobilités annonce sur une de ses lignes quand il y en a un, l'heure où ton trajet doit finir pour ton rendez-vous et ta marge s'il y en a, et si tu es en route</td>
           <td data-label="Pourquoi">Garder ton écran verrouillé à jour quand MARGE est fermée</td>
           <td data-label="Où elle va">Envoyés au serveur MARGE quand le trajet s'affiche sur ton écran verrouillé, et de nouveau s'il change. Gardés jusqu'à la fin du trajet (sections 3 et 5). Aucune position, aucun nom de lieu.</td>
+        </tr>
+        <tr>
+          <td>Annonces des voyageurs (seulement si tu en fais une) : la ligne, l'arrêt où tu montes et ta direction, l'heure prévue du véhicule, ton choix parmi des réponses fixes (« pas vu », « bondé », « à l'arrêt », « panne à bord ») et un code tiré au hasard par ton iPhone</td>
+          <td data-label="Pourquoi">Prévenir les autres voyageurs de ce véhicule, et te permettre d'annuler ton annonce</td>
+          <td data-label="Où elle va">Envoyés au serveur MARGE quand tu touches une réponse. Le serveur garde ton choix, la gare, l'heure, une empreinte non réversible de ce code et une empreinte de ton réseau qui change chaque jour : elles servent seulement à compter une voix par personne et à limiter les abus. Aucun texte libre, aucune position, aucun nom de lieu, aucun identifiant de l'appareil. Les autres voyageurs voient seulement le nombre de voix. Pour afficher les annonces, ton iPhone envoie les véhicules de ton trajet (ligne, arrêts, heure prévue), comme pour les prochains passages. Dire qu'une annonce est fausse envoie seulement cette annonce et ta réponse.</td>
         </tr>
         <tr>
           <td>Notifications</td>
@@ -344,6 +349,7 @@
       <li><strong>Heures d'arrivée vues par ta position</strong> (« Retenir mes heures d'arrivée ») : seulement avec ton accord, donné dans l'app en activant ce réglage et retirable au même endroit (article 6.1.a du RGPD, article 82 de la loi Informatique et Libertés). Elles restent sur ton iPhone, sans que l'éditeur y ait accès, et sont effacées dès que tu coupes le réglage. « Ton mois » marche quand même sans.</li>
       <li><strong>Journal de trajet</strong> (« Garder un journal de mes trajets ») : seulement avec ton accord, donné dans l'app en activant ce réglage et retirable au même endroit (article 6.1.a du RGPD, article 82 de la loi Informatique et Libertés). Il reste sur ton iPhone, sans que l'éditeur y ait accès, et est effacé dès que tu coupes le réglage. MARGE marche quand même sans.</li>
       <li><strong>Trajet envoyé par un lien</strong> : c'est le service que tu demandes en l'envoyant ou en l'ouvrant (article 6.1.b du RGPD). La page lit le lien sur ton appareil seulement, ce qui est strictement nécessaire pour l'ouvrir (article 82 de la loi Informatique et Libertés).</li>
+      <li><strong>Annonces des voyageurs</strong> : c'est un service que tu demandes en touchant une réponse (article 6.1.b du RGPD) ; les empreintes qui comptent une voix par personne protègent ce service des abus (intérêt légitime, article 6.1.f). Rien ne part si tu ne touches rien ; MARGE marche quand même sans.</li>
       <li><strong>Adresse IP vue en transit</strong> : nécessaire pour que la connexion fonctionne et pour protéger le serveur (intérêt légitime, article 6.1.f), sans conservation par MARGE : seule une empreinte non réversible sert à compter les demandes, en mémoire, 24 heures au plus. Quand un navigateur demande la page d'un lien de trajet, l'adresse IP est vue de la même façon, sans être gardée ni comptée.</li>
     </ul>
   </section>
@@ -416,6 +422,10 @@
         <tr>
           <td>Trajet suivi app fermée, sur le serveur</td>
           <td data-label="Durée">Environ 10 minutes après l'arrivée prévue (retard annoncé compris), 30 minutes si Apple ne répond pas, 9 heures au plus</td>
+        </tr>
+        <tr>
+          <td>Annonces des voyageurs, sur le serveur</td>
+          <td data-label="Durée">Chaque annonce s'efface d'elle-même : de 20 minutes à 1 h 30 au plus selon son type et l'heure du véhicule. Sur ton iPhone, le code de tes annonces jusqu'à leur fin, ou jusqu'à ce que tu effaces tes données</td>
         </tr>
         <tr>
           <td>Envoi en attente chez Apple</td>
