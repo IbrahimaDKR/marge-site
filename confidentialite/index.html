@@ -98,7 +98,7 @@
   <header>
     <p class="brand">MARGE</p>
     <h1>Politique de confidentialité</h1>
-    <p class="updated">Dernière mise à jour : 21 novembre 2026</p>
+    <p class="updated">Dernière mise à jour : 22 novembre 2026</p>
   </header>
 
   <section>
@@ -113,7 +113,7 @@
       <li>Ta position n'est lue que si tu l'autorises, quand MARGE est ouverte à l'écran, et pendant un trajet suivi même si tu quittes l'app (l'iPhone affiche alors son indicateur bleu). Jamais en arrière-plan en dehors d'un trajet.</li>
       <li>Pour calculer ton trajet, MARGE envoie à son serveur la position de ton domicile et de ton travail <strong>à environ 10 m près</strong> et une heure tirée de ton heure d'arrivée. À 10 m près, c'est pratiquement ton adresse : il faut cette précision pour que le temps de marche jusqu'à l'arrêt soit juste (à 100 m près, il était faux de plusieurs minutes). Le serveur interroge Île-de-France Mobilités, ne garde la réponse que 15 minutes au plus et n'écrit ces positions dans aucun journal.</li>
       <li>Si tu actives le suivi app fermée, ton trajet en cours (lignes, arrêts, heures, sans position ni nom de lieu) reste sur le serveur MARGE jusqu'à la fin du trajet, pour tenir ton écran verrouillé à jour. Sans cette option, le serveur ne suit pas ton trajet.</li>
-      <li>Si tu poses une question à MARGE, et seulement après ton accord, le texte de ta question, les noms de tes lieux et les noms des lignes de ton trajet sont lus par une IA : Claude, d'Anthropic. Jamais ta voix, tes adresses ni ta position.</li>
+      <li>Si tu poses une question à MARGE, et seulement après ton accord, le texte de ta question, les noms de tes lieux et les noms des lignes de ton trajet sont lus par une IA : Claude, d'Anthropic. Jamais ta voix, tes adresses ni ta position. Si tu actives en plus « Lire ton écran », ce que montre ton écran (ton trajet, ses arrêts, ses heures) l'est aussi.</li>
       <li>Tu effaces tes données depuis l'app : Réglages &gt; Effacer mes données. Cela efface ce que garde ton iPhone et demande au serveur d'oublier ton trajet suivi.</li>
     </ul>
   </section>
@@ -145,8 +145,13 @@
         </tr>
         <tr>
           <td>Questions posées à MARGE (« Demander à MARGE ») : le texte de ta question, les noms que tu as donnés à tes lieux, les noms des lignes de ton trajet, la date et l'heure</td>
-          <td data-label="Pourquoi">Comprendre ce que tu demandes. Les heures que MARGE te répond viennent toujours de ses horaires, jamais de l'IA</td>
+          <td data-label="Pourquoi">Comprendre ce que tu demandes. Les heures que MARGE te répond viennent toujours de ses horaires. Avec « Lire ton écran », l'IA peut répondre avec ses mots, et MARGE ne dit sa réponse que si chaque heure, ligne et arrêt est sur ton écran</td>
           <td data-label="Où elle va">Seulement si tu poses une question, après ton accord. Passent par le serveur MARGE, puis sont lus par Claude, l'IA d'Anthropic (voir section 3). Ta voix est transcrite sur ton iPhone et n'en sort pas.</td>
+        </tr>
+        <tr>
+          <td>Ce que montre ton écran (seulement avec « Lire ton écran ») : ton trajet, ses arrêts et ses heures, où sont tes véhicules, l'info trafic, les autres trajets, les noms de tes lieux</td>
+          <td data-label="Pourquoi">Répondre aux questions que MARGE ne sait pas lire seule</td>
+          <td data-label="Où elle va">Part avec chaque question, après ce second accord, au serveur MARGE puis à Claude (section 3). Pas gardé par le serveur MARGE.</td>
         </tr>
         <tr>
           <td>Heure d'arrivée voulue</td>
@@ -319,6 +324,7 @@
       <li>les noms des lignes de ton trajet ;</li>
       <li>la date et l'heure du moment, et l'intention de ta question précédente si tu en poses une à la suite.</li>
     </ul>
+    <p>Seulement si tu actives aussi « Lire ton écran » (proposé une fois dans « Demander à MARGE », à couper dans Réglages), part en plus, avec chaque question, ce que montre ton écran, écrit en phrases par MARGE : ton trajet, ses arrêts et ses heures, où sont tes véhicules et leurs prochains passages, l'info trafic, les autres trajets à l'écran, avec les noms de tes lieux. Ces lignes montrent où tu vas et quand, et l'arrêt où tu montes peut dire près d'où tu habites. Claude peut alors répondre avec ses mots à une question que MARGE ne sait pas lire : avant de te la dire, le serveur MARGE puis ton iPhone vérifient que chaque heure, chaque nombre, chaque ligne et chaque arrêt de sa réponse est sur ton écran ; sinon, MARGE te dit qu'elle n'a pas compris. Cette vérification ne prouve pas que la réponse est juste : en cas de doute, regarde ton trajet. Une réponse écrite par Claude est marquée « Écrit par l'IA, d'après ton écran ». Une rue de départ ou d'arrivée n'y est jamais écrite : elle devient « ton départ » ou « ton arrivée ». Sans ce réglage, rien de cela ne part ; « Effacer mes données » le coupe aussi, comme couper « Demander à MARGE ».</p>
     <p>Ce qui ne part <strong>jamais</strong> : ta voix, qui est transcrite sur ton iPhone et n'en sort pas ; tes adresses ; ta position ; un identifiant de compte ou d'appareil. Anthropic ne voit pas ton adresse IP, puisque c'est le serveur MARGE qui l'interroge. Mais une question contient ce que tu y écris : n'y mets pas ce que tu ne veux pas envoyer.</p>
     <p>Le serveur MARGE ne garde ni la question, ni la réponse, et ne les écrit dans aucun journal : il compte seulement le nombre de questions du jour. Anthropic efface ces textes sous <strong>30 jours</strong>, ou les garde jusqu'à <strong>2 ans</strong> s'ils sont signalés pour abus, et ne s'en sert pas pour entraîner ses modèles. Elle agit pour le compte de l'éditeur (<a href="https://www.anthropic.com/legal">conditions et accord de traitement des données d'Anthropic</a>).</p>
     <p>Le serveur fait aussi lire par Claude les messages officiels d'info trafic d'Île-de-France Mobilités, pour savoir où et quand ils s'appliquent. Ce sont des textes publics : ils ne contiennent rien sur toi.</p>
@@ -343,6 +349,7 @@
       <li><strong>Position et capteurs de mouvement</strong> : seulement avec ton autorisation, donnée dans la fenêtre d'iOS et retirable à tout moment dans les réglages de l'iPhone ; MARGE marche quand même, depuis tes lieux enregistrés.</li>
       <li><strong>Notifications</strong> : les alertes de départ, seulement si tu les autorises dans la fenêtre d'iOS ; tu les coupes dans les réglages de l'iPhone. Les alertes du suivi app fermée ne concernent que le trajet en cours et seulement si tu as activé cette option. MARGE marche quand même sans.</li>
       <li><strong>Questions posées à MARGE</strong> : c'est un service que tu demandes en posant ta question (article 6.1.b du RGPD), après une information complète et ton accord dans l'app. MARGE marche quand même sans ; tu coupes cette fonction à tout moment.</li>
+      <li><strong>Lire ton écran</strong> : seulement avec ton accord, donné dans « Demander à MARGE » ou dans Réglages, et retirable dans Réglages (article 6.1.a du RGPD). Sans lui, rien de ce que montre ton écran ne part ; « Demander à MARGE » marche quand même.</li>
       <li><strong>Suivi app fermée</strong> : c'est un service que tu demandes en l'activant (article 6.1.b du RGPD), après une information complète et ton accord dans l'app. L'accès au jeton d'envoi ne sert qu'à ce service (article 82 de la loi Informatique et Libertés). MARGE marche quand même sans ; tu le coupes à tout moment.</li>
       <li><strong>Heures de départ</strong> (« Retenir mes heures de départ ») : seulement avec ton accord, donné dans l'app en activant ce réglage et retirable au même endroit (article 6.1.a du RGPD, article 82 de la loi Informatique et Libertés). Elles restent sur ton iPhone, sans que l'éditeur y ait accès, et sont effacées dès que tu coupes le réglage. MARGE marche quand même sans.</li>
       <li><strong>Ton mois</strong> : compter tes arrivées fait partie du service (article 6.1.b du RGPD) ; ces heures restent sur ton iPhone, sans que l'éditeur y ait accès.</li>
@@ -416,7 +423,7 @@
           <td data-label="Durée">45 secondes, ou 5 minutes quand le serveur suit tout le réseau en direct (10 minutes pour un plan B) ; une copie 15 minutes en tout (10 pour des prochains passages en direct) pour la redonner si Île-de-France Mobilités ne répond plus ; 20 minutes au plus en tout quand MARGE a déjà beaucoup interrogé Île-de-France Mobilités dans la journée. Horaires prévus entre deux arrêts : 30 minutes au plus</td>
         </tr>
         <tr>
-          <td>Questions posées à MARGE</td>
+          <td>Questions posées à MARGE et, avec « Lire ton écran », ce que montre ton écran</td>
           <td data-label="Durée">Aucune conservation par le serveur MARGE. Chez Anthropic : 30 jours au plus, 2 ans au plus si elles sont signalées pour abus</td>
         </tr>
         <tr>
