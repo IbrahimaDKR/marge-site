@@ -98,7 +98,7 @@
   <header>
     <p class="brand">MARGE</p>
     <h1>Politique de confidentialité</h1>
-    <p class="updated">Dernière mise à jour : 22 novembre 2026</p>
+    <p class="updated">Dernière mise à jour : 23 novembre 2026</p>
   </header>
 
   <section>
@@ -219,9 +219,9 @@
           <td data-label="Où elle va">Relevés auprès du serveur (les lignes, l'arrêt où tu montes et celui où tu descends, une heure tirée de ton heure d'arrivée ou de départ, détaillée en section 3 ; aucune position), puis gardés sur ton iPhone jusqu'à l'heure du trajet.</td>
         </tr>
         <tr>
-          <td>Trajet suivi app fermée (seulement si tu l'actives) : le jeton d'envoi d'Apple, un numéro tiré au hasard pour ce trajet, les lignes, les arrêts de chaque véhicule de la montée à la descente, le code du train, les heures de chaque étape, marches comprises, le retard qu'Île-de-France Mobilités annonce sur une de ses lignes quand il y en a un, l'heure où ton trajet doit finir pour ton rendez-vous et ta marge s'il y en a, et si tu es en route</td>
+          <td>Trajet suivi app fermée (seulement si tu l'actives) : le jeton d'envoi d'Apple, un numéro tiré au hasard pour ce trajet, les lignes, les arrêts de chaque véhicule de la montée à la descente, le code du train, les heures de chaque étape, marches comprises, le retard qu'Île-de-France Mobilités annonce sur une de ses lignes quand il y en a un, l'heure où ton trajet doit finir pour ton rendez-vous et ta marge s'il y en a, et si tu es en route, et les alertes que ton iPhone a déjà sonnées pour ce trajet (correspondance ratée : sa ligne et son heure ; message de trafic : son numéro)</td>
           <td data-label="Pourquoi">Garder ton écran verrouillé à jour quand MARGE est fermée</td>
-          <td data-label="Où elle va">Envoyés au serveur MARGE quand le trajet s'affiche sur ton écran verrouillé, et de nouveau s'il change. Gardés jusqu'à la fin du trajet (sections 3 et 5). Aucune position, aucun nom de lieu.</td>
+          <td data-label="Où elle va">Envoyés au serveur MARGE quand le trajet s'affiche sur ton écran verrouillé, de nouveau s'il change, et chaque minute tant que MARGE tourne (ouverte, ou pendant le trajet en arrière-plan), pour que le serveur sache qu'elle est là et ne te prévienne pas deux fois. Gardés jusqu'à la fin du trajet (sections 3 et 5). Aucune position, aucun nom de lieu.</td>
         </tr>
         <tr>
           <td>Annonces des voyageurs (seulement si tu en fais une) : la ligne, l'arrêt où tu montes et ta direction, l'heure prévue du véhicule, ton choix parmi des réponses fixes (« pas vu », « bondé », « à l'arrêt », « panne à bord ») et un code tiré au hasard par ton iPhone</td>
@@ -231,7 +231,7 @@
         <tr>
           <td>Notifications</td>
           <td data-label="Pourquoi">Te dire quand partir, et si ton trajet change</td>
-          <td data-label="Où elle va">Les alertes de départ sont programmées et affichées par ton iPhone. Si tu actives le suivi app fermée, les mises à jour de ton écran verrouillé et leurs alertes (retard, annulation, correspondance, ligne de ton trajet coupée ou perturbée) viennent du serveur MARGE et passent par Apple : des heures, un retard en minutes, si ces heures sont lues en direct, la fin du suivi et, quand une étape pose problème, son numéro dans le trajet (la 2ᵉ étape, par exemple), jamais un nom de lieu ni de ligne.</td>
+          <td data-label="Où elle va">Les alertes de départ sont programmées et affichées par ton iPhone. Si tu actives le suivi app fermée, les mises à jour de ton écran verrouillé et leurs alertes (retard, annulation, correspondance, ligne de ton trajet coupée ou perturbée) viennent du serveur MARGE et passent par Apple. Une correspondance ratée ou une ligne coupée est d'abord dite par ton iPhone ; le serveur ne la dit que si MARGE ne tourne plus. Ce qui passe par Apple : des heures, un retard en minutes, si ces heures sont lues en direct, la fin du suivi et, quand une étape pose problème, son numéro dans le trajet (la 2ᵉ étape, par exemple), jamais un nom de lieu ni de ligne.</td>
         </tr>
       </tbody>
     </table>
@@ -263,8 +263,8 @@
     <h2>3. Ce qui reste sur ton iPhone, ce qui passe par le serveur, ce qui va chez Île-de-France Mobilités</h2>
 
     <h3>Sur ton iPhone</h3>
-    <p>Tout ce que tu as réglé (domicile, travail, heure, jours, marge, temps pour te préparer, temps jusqu'à ta porte, lignes habituelles), tes lieux gardés, tes 5 derniers lieux cherchés, tes trajets préparés et leurs horaires prévus, le compteur de temps gagné, tes arrivées du mois (avec l'heure vue par ta position si tu as activé « Retenir mes heures d'arrivée »), tes heures de départ si tu as activé « Retenir mes heures de départ », les heures de tes prochains réveils et les fichiers son des alertes parlées si tu les as activés, ton journal de trajet si tu as activé « Garder un journal de mes trajets », la liste des alertes et le dernier trajet affiché sur ton écran verrouillé. Ces données sont dans l'espace de l'app sur ton téléphone ; l'éditeur n'y a pas accès. Elles suivent la sauvegarde de ton iPhone (iCloud ou ordinateur) si elle est activée, sauf les fichiers son des alertes parlées et le journal de trajet.</p>
-    <p>Les notifications s'affichent sur ton écran verrouillé selon tes réglages iOS. Elles peuvent nommer ta destination (« Travail »), tes lignes et tes arrêts. « Pars maintenant », « Prochain arrêt » et « Correspondance ratée » peuvent s'afficher pendant un mode Concentration, si tu le permets dans les réglages de l'iPhone.</p>
+    <p>Tout ce que tu as réglé (domicile, travail, heure, jours, marge, temps pour te préparer, temps jusqu'à ta porte, lignes habituelles), tes lieux gardés, tes 5 derniers lieux cherchés, tes trajets préparés et leurs horaires prévus, le compteur de temps gagné, tes arrivées du mois (avec l'heure vue par ta position si tu as activé « Retenir mes heures d'arrivée »), tes heures de départ si tu as activé « Retenir mes heures de départ », les heures de tes prochains réveils et les fichiers son des alertes parlées si tu les as activés, ton journal de trajet si tu as activé « Garder un journal de mes trajets », la liste des alertes, le dernier trajet affiché sur ton écran verrouillé, et pour le trajet du jour seulement : si tu es parti et si MARGE te croit à bord (d'après ta position, ou d'après l'horaire après « Je suis parti »), pour ne plus t'alerter que de ce trajet. Aucune position n'est gardée. Ces données sont dans l'espace de l'app sur ton téléphone ; l'éditeur n'y a pas accès. Elles suivent la sauvegarde de ton iPhone (iCloud ou ordinateur) si elle est activée, sauf les fichiers son des alertes parlées et le journal de trajet.</p>
+    <p>Les notifications s'affichent sur ton écran verrouillé selon tes réglages iOS. Elles peuvent nommer ta destination (« Travail »), tes lignes et tes arrêts. Les alertes de départ (« Pars maintenant », « Dernière chance », celles de tes trajets préparés et de tes rendez-vous) et « Prochain arrêt » peuvent s'afficher pendant un mode Concentration, si tu le permets dans les réglages de l'iPhone.</p>
 
     <h3>Sur le serveur MARGE</h3>
     <p>À chaque recherche de trajet, ton iPhone envoie au serveur MARGE, par une connexion chiffrée :</p>
@@ -296,9 +296,10 @@
       <li>les heures de chaque étape, marches comprises ;</li>
       <li>quand Île-de-France Mobilités annonce un retard sur une ligne de ton trajet (« + 5 min »), ce retard, en secondes, avec l'étape concernée. Ce chiffre vient du serveur MARGE lui-même : c'est lui qui l'a donné à ton iPhone avec le trajet. Le serveur l'ajoute à l'heure d'arrivée prévue de ton trajet tant qu'il ne lit pas ce véhicule en direct, puis le retire de ce trajet ; sinon il disparaît avec le trajet. Le texte de l'annonce n'est pas envoyé ;</li>
       <li>l'heure où ton trajet doit finir pour ton rendez-vous, et ta marge, s'il y en a. Cette heure est ton heure de rendez-vous, moins le temps jusqu'à ta porte si tu en as réglé un dans « Tes habitudes » (8h57 pour un rendez-vous à 9h et 3 minutes jusqu'à ta porte). Le temps jusqu'à ta porte n'est pas envoyé à part : il est déjà retiré de cette heure ;</li>
-      <li>si tu es en route ou non.</li>
+      <li>si tu es en route ou non ;</li>
+      <li>les alertes que ton iPhone t'a déjà données pour ce trajet (la ligne et l'heure d'une correspondance ratée, le numéro d'un message de trafic), pour que le serveur ne les redise pas.</li>
     </ul>
-    <p>Pendant le suivi, le serveur compare aussi les lignes de ton trajet aux messages de trafic publics d'Île-de-France Mobilités, pour te prévenir si l'une d'elles vient d'être coupée ou perturbée là où tu vas la prendre. Il note, avec ton trajet, les messages qu'il t'a déjà signalés, pour ne pas te prévenir deux fois ; cette note s'efface avec le trajet.</p>
+    <p>Pendant le suivi, le serveur compare aussi les lignes de ton trajet aux messages de trafic publics d'Île-de-France Mobilités, pour te prévenir si l'une d'elles vient d'être coupée ou perturbée là où tu vas la prendre. Il note, avec ton trajet, l'heure du premier et du dernier envoi de ton iPhone et les alertes et messages que lui ou ton iPhone t'ont déjà signalés, pour ne pas te prévenir deux fois ; cette note s'efface avec le trajet.</p>
     <p>Ce qui ne part pas : ta position, tes adresses, le nom de tes lieux, ton nom.</p>
     <p>Ces données ne disent pas qui tu es, mais l'arrêt où tu montes, celui où tu descends et le temps de marche autour donnent une idée du quartier d'où tu pars et où tu vas. Nous les traitons donc comme des données personnelles. Chaque trajet a un numéro tiré au hasard, jamais réutilisé : le serveur ne relie pas tes trajets entre eux et ne garde pas ton adresse IP avec eux.</p>
     <p><strong>Combien de temps.</strong> Le trajet est effacé dès que sa fin t'a été envoyée, environ 10 minutes après l'arrivée prévue (retard annoncé compris). Si Apple ne peut pas la transmettre, 30 minutes après cette arrivée. Dans tous les cas, au plus 9 heures après l'envoi.</p>
@@ -441,6 +442,10 @@
         <tr>
           <td>Dernier trajet affiché sur l'écran verrouillé, sur ton iPhone</td>
           <td data-label="Durée">Jusqu'au trajet suivant, à la fin du trajet si l'app est ouverte, ou jusqu'à ce que tu effaces tes données</td>
+        </tr>
+        <tr>
+          <td>Trajet dans lequel MARGE te croit à bord, sur ton iPhone</td>
+          <td data-label="Durée">Jusqu'à la fin de ce trajet (arrivée, « Terminer ce trajet », « Je ne suis pas dedans », « Pas encore parti ») ; si MARGE n'a pas vu la fin, effacé la première fois que MARGE vérifie un trajet plus de 12 heures après l'heure d'arrivée visée, ou quand tu effaces tes données</td>
         </tr>
         <tr>
           <td>Positions et adresse IP dans les journaux du serveur</td>
